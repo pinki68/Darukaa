@@ -1,0 +1,22 @@
+{
+  "name": "darukae",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "prepare": "husky",
+    "lint": "npm --prefix frontend run lint -- --max-warnings=0",
+    "format": "prettier --write \"frontend/**/*.{js,jsx,css,json,md}\" \"docs/**/*.md\" \"README.md\"",
+    "format:check": "prettier --check \"frontend/**/*.{js,jsx,css,json,md}\" \"docs/**/*.md\" \"README.md\"",
+    "quality": "npm run format:check && npm run lint && npm run ruff && npm run ruff:format",
+    "quality:ci": "npm run quality && npm run test:backend",
+    "precommit": "lint-staged",
+    "ruff": "ruff check backend",
+    "ruff:format": "ruff format --check backend",
+    "test:backend": "cd backend && pytest -q"
+  },
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.1",
+    "prettier": "^3.4.2"
+  }
+}
