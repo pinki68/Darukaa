@@ -147,6 +147,4 @@ docs/               CICD.md, CODE_QUALITY.md, DATASET.md, DEPLOYMENT.md
 render.yaml         Render blueprint (Python API + Postgres)
 ```
 
-## License
 
-MIT (adjust as needed for your submission).
